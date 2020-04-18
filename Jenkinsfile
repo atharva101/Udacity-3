@@ -15,7 +15,7 @@ pipeline {
                   sh 'tidy -q -e *.html'
               }
               steps { 
-                 aquaMicroscanner imageName: 'alpine:latest', notCompleted: 'exit 1', onDisallowed: 'fail'
+                 aquaMicroscanner imageName: 'alpine:latest', notCompilesCmd: 'exit 1', onDisallowed: 'fail'
               }
          }         
          stage('Upload to AWS') {
